@@ -5,7 +5,7 @@ Ragel compiles executable finite state machines from regular languages. Ragel ta
 
 [Conan.io](https://conan.io) package for the [ragel](http://www.colm.net/open-source/ragel/) project.
 
-The packages generated with this **conanfile** can be found in [Bintray](https://bintray.com/sigmoidal/public-conan/conan-ragel_installer%3Asigmoidal).
+The packages generated with this **conanfile** can be found in [Bintray](https://bintray.com/sigmoidal/public-conan/ragel_installer%3Asigmoidal).
 
 ## For Users: Use this package
 
