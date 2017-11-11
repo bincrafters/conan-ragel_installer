@@ -1,4 +1,4 @@
-[ ![Download](https://api.bintray.com/packages/sigmoidal/public-conan/ragel_install%3Asigmoidal/images/download.svg?version=6.10%3Astable) ](https://bintray.com/sigmoidal/public-conan/ragel_install%3Asigmoidal/6.10%3Astable/link)
+[ ![Download](https://api.bintray.com/packages/sigmoidal/public-conan/ragel_installer%3Asigmoidal/images/download.svg?version=6.10%3Astable) ](https://bintray.com/sigmoidal/public-conan/ragel_installer%3Asigmoidal/6.10%3Astable/link)
 [![Build status](https://ci.appveyor.com/api/projects/status/se14gom9yvuq9ps4?svg=true)](https://ci.appveyor.com/project/sigmoidal/conan-ragel_installer)
 
 Ragel compiles executable finite state machines from regular languages. Ragel targets C, C++ and ASM. 
