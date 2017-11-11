@@ -55,7 +55,7 @@ class RagelConan(ConanFile):
             env_build = AutoToolsBuildEnvironment(self)
             #env_build.fpic = self.options.fPIC
             
-            with tools.chdir("{0}-{1}".format(self.name, self.version)):
+            with tools.chdir("{0}-{1}".format('ragel', self.version)):
                 with tools.environment_append(env_build.vars):
                     #if platform.system() == "Darwin":
                     #    tools.replace_in_file("./configure", r'-install_name \$rpath/\$soname', r'-install_name \$soname')
@@ -114,7 +114,7 @@ class RagelConan(ConanFile):
 
         
     def package(self):
-        build_src_dir = "{0}-{1}".format(self.name, self.version)
+        build_src_dir = "{0}-{1}".format('ragel', self.version)
         build_dir = os.path.join('out','bin')
 
         self.copy(pattern="COPYING", dst="licenses", src=build_src_dir)
