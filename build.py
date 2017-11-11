@@ -43,5 +43,5 @@ if __name__ == "__main__":
     upload = "https://api.bintray.com/conan/{0}/public-conan".format(username)
 
     builder = ConanMultiPackager(username=username, channel=channel, reference=reference, upload=upload)
-    builder.add({"arch": os.environ["CONAN_ARCHS"]}, {}, {}, {})
+    builder.add({}, {}, {}, {})
     builder.run()
