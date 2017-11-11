@@ -5,7 +5,7 @@ from conans import ConanFile, tools, AutoToolsBuildEnvironment
 import os
 
 class RagelConan(ConanFile):
-    name = "ragel"
+    name = "ragel_installer"
     version = "6.10"
     settings = {"os": ["Windows"], 
                 "arch": ["x86", "x86_64"],
@@ -93,8 +93,6 @@ class RagelConan(ConanFile):
                     
                     self.prefix = tools.unix_path(os.path.abspath("../out"))
                     self.run('{vccmd} && bash -c \'./configure '
-                             '--disable-examples '
-                             '--disable-docs '
                              '--prefix={prefix} '
                              'CC="$PWD/compile cl -nologo" '
                              'CXX="$PWD/compile cl -nologo" '

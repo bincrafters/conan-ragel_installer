@@ -1,24 +1,24 @@
 [ ![Download](https://api.bintray.com/packages/sigmoidal/public-conan/ragel_install%3Asigmoidal/images/download.svg?version=6.10%3Astable) ](https://bintray.com/sigmoidal/public-conan/ragel_install%3Asigmoidal/6.10%3Astable/link)
-[![Build status](https://ci.appveyor.com/api/projects/status/se14gom9yvuq9ps4?svg=true)](https://ci.appveyor.com/project/SSE4/conan-cygwin-installer)
+[![Build status](https://ci.appveyor.com/api/projects/status/se14gom9yvuq9ps4?svg=true)](https://ci.appveyor.com/project/sigmoidal/conan-ragel_installer)
 
 Ragel compiles executable finite state machines from regular languages. Ragel targets C, C++ and ASM. 
 
 [Conan.io](https://conan.io) package for the [ragel](http://www.colm.net/open-source/ragel/) project.
 
-The packages generated with this **conanfile** can be found in [Bintray](https://bintray.com/sigmoidal/public-conan/ragel_install%3Asigmoidal).
+The packages generated with this **conanfile** can be found in [Bintray](https://bintray.com/sigmoidal/public-conan/conan-ragel_installer%3Asigmoidal).
 
 ## For Users: Use this package
 
 ### Basic setup
 
-    $ conan install ragel_install/6.10@sigmoidal/stable
+    $ conan install ragel_installer/6.10@sigmoidal/stable
 
 ### Project setup
 
 If you handle multiple dependencies in your project is better to add a *conanfile.txt*
 
     [requires]
-    ragel_install/6.10@sigmoidal/stable
+    ragel_installer/6.10@sigmoidal/stable
 
     [generators]
     txt
