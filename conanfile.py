@@ -34,7 +34,7 @@ class RagelConan(ConanFile):
         os.unlink(filename)
                                       
     def build(self):
-        if self.settings.os == 'Windows':
+        if self.settings.compiler == 'Visual Studio':
             # this overrides pre-configured environments (such as Appveyor's)
             if "VisualStudioVersion" in os.environ:
                 del os.environ["VisualStudioVersion"]
@@ -51,10 +51,11 @@ class RagelConan(ConanFile):
 
             os.environ['PATH'] = os.path.join(os.environ['MSYS_ROOT'], 'usr', 'bin') + os.pathsep + \
                                  os.environ['PATH']
-                                 
+
+            self.run('bash -l -c "pacman -S automake-wrapper autoconf --noconfirm"')
+
             env_build = AutoToolsBuildEnvironment(self)
-            #env_build.fpic = self.options.fPIC
-            
+
             with tools.chdir("{0}-{1}".format('ragel', self.version)):
                 with tools.environment_append(env_build.vars):
                     #if platform.system() == "Darwin":
@@ -111,7 +112,9 @@ class RagelConan(ConanFile):
                                          runtime=str(self.settings.compiler.runtime)))
                     
                     self.run("{vccmd} && bash -c 'make -j {cpus} install".format(vccmd=vccmd, cpus=tools.cpu_count()))
-
+        else:
+            raise Exception("This recipe is only necessary for Visual Studio compilers. "
+                            "Use a system package if you are on a different platform (or using a different compiler).")
         
     def package(self):
         build_src_dir = "{0}-{1}".format('ragel', self.version)

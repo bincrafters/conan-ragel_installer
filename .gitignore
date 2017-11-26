@@ -28,12 +28,19 @@
 *.out
 *.app
 
-# Cache
-__pycache__/*
-test_package/__pycache__/*
-test_package/build/*
-build/*
+# Directories
+.idea
+__pycache__
+init.bat
+upload.bat
+build*/
+bin*
+.vs
+.vscode*
+conaninfo.txt
+conanbuildinfo.*
+CMakeFiles
+CMakeCache.txt
 *.pyc
-
-# IDE
-.idea/*
+cmake_install.cmakes
+Makefile
