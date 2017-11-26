@@ -57,7 +57,7 @@ class RagelConan(ConanFile):
             with tools.chdir("{0}-{1}".format('ragel', self.version)):
                 with tools.environment_append(env_build.vars):
 
-                    self.run('bash -l -c "pacman -S automake-wrapper autoconf --noconfirm"')
+                    self.run("bash -c 'pacman -S automake-wrapper autoconf --noconfirm'")
 
                     #if platform.system() == "Darwin":
                     #    tools.replace_in_file("./configure", r'-install_name \$rpath/\$soname', r'-install_name \$soname')
