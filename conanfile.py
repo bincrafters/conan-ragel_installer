@@ -25,7 +25,7 @@ class RagelConan(ConanFile):
         
     def build_requirements(self):
         if self.settings.os == "Windows":
-            self.build_requires("msys2_installer/latest@bincrafters/testing")
+            self.build_requires("msys2_installer/latest@bincrafters/stable")
                 
     def source(self):
         filename = "ragel-%s.tar.gz" % self.version
