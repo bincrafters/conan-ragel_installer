@@ -7,14 +7,19 @@ import os
 class RagelConan(ConanFile):
     name = "ragel_installer"
     version = "6.10"
+    description = "Ragel compiles executable finite state machines from regular languages. " \
+                  "Ragel targets C, C++ and ASM. "
+    homepage = "http://www.colm.net/open-source/ragel"
+
     settings = {"os": ["Windows"], 
                 "arch": ["x86", "x86_64"],
                 "compiler": [ "Visual Studio" ],
                 "build_type": ["Release"]}
 
     url = "https://github.com/bincrafters/conan-ragel_installer"
-    description = "Ragel compiles executable finite state machines from regular languages."
+
     license = "https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html"
+    recipe_license = "MIT"
     short_paths = True
     source_url = 'http://www.colm.net/files/ragel/ragel-{0}.tar.gz'.format(version)
     

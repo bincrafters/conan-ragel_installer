@@ -1,11 +1,12 @@
-[ ![Download](https://api.bintray.com/packages/bincrafters/public-conan/ragel_installer%3Abincrafters/images/download.svg?version=6.10%3Astable) ](https://bintray.com/bincrafters/public-conan/ragel_installer%3Abincrafters/6.10%3Astable/link)
-[![Build status](https://ci.appveyor.com/api/projects/status/hbf4xiad80vdq8d3?svg=true)](https://ci.appveyor.com/project/bincrafters/conan-ragel-installer)
+[ ![Download](https://api.bintray.com/packages/bincrafters/public-conan/ragel_installer%3Abincrafters/images/download.svg) ](https://bintray.com/bincrafters/public-conan/ragel_installer%3Abincrafters/_latestVersion)
+[![Build Status](https://travis-ci.org/bincrafters/conan-ragel_installer.svg?branch=stable%2F6.10)](https://travis-ci.org/bincrafters/conan-ragel_installer)
+[![Build status](https://ci.appveyor.com/api/projects/status/github/bincrafters/conan-ragel_installer?branch=stable%2F6.10&svg=true)](https://ci.appveyor.com/project/bincrafters/conan-ragel_installer)
+
+[Conan.io](https://conan.io) package recipe for [*ragel_installer*](http://www.colm.net/open-source/ragel).
 
 Ragel compiles executable finite state machines from regular languages. Ragel targets C, C++ and ASM. 
 
-[Conan.io](https://conan.io) package for the [ragel](http://www.colm.net/open-source/ragel/) project.
-
-The packages generated with this **conanfile** can be found in [Bintray](https://bintray.com/bincrafters/public-conan/ragel_installer%3Abincrafters).
+The packages generated with this **conanfile** can be found on [Bintray](https://bintray.com/bincrafters/public-conan/ragel_installer%3Abincrafters).
 
 ## For Users: Use this package
 
@@ -20,8 +21,6 @@ If you handle multiple dependencies in your project is better to add a *conanfil
     [requires]
     ragel_installer/6.10@bincrafters/stable
 
-    [generators]
-    txt
 
 Complete the installation of requirements for your project running:
 
@@ -39,13 +38,41 @@ The following command both runs all the steps of the conan file, and publishes t
 
     $ conan create bincrafters/stable
 
+
 ## Add Remote
 
-	$ conan remote add bincrafters "https://api.bintray.com/conan/bincrafters/public-conan"
+    $ conan remote add bincrafters "https://api.bintray.com/conan/bincrafters/public-conan"
 
 ## Upload
 
-    $ conan upload ragel_install/6.10@bincrafters/stable --all -r bincrafters
+    $ conan upload ragel_installer/6.10@bincrafters/stable --all -r bincrafters
 
-### License
-[GNU GPL v2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
+## Package License
+[https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html](LICENSE)
+
+## Conan Recipe License
+
+This conan recipe license applies only to the files of this recipe, which can be used to build and package ragel_installer. 
+It does *not* in any way apply to the actual software being packaged.
+
+*MIT License*
+
+Copyright (c) 2017 Bincrafters
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
