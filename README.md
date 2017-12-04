@@ -1,5 +1,4 @@
-[ ![Download](https://api.bintray.com/packages/bincrafters/public-conan/ragel_installer%3Abincrafters/images/download.svg) ](https://bintray.com/bincrafters/public-conan/ragel_installer%3Abincrafters/_latestVersion)
-[![Build Status](https://travis-ci.org/bincrafters/conan-ragel_installer.svg?branch=stable%2F6.10)](https://travis-ci.org/bincrafters/conan-ragel_installer)
+[![Download](https://api.bintray.com/packages/bincrafters/public-conan/ragel_installer%3Abincrafters/images/download.svg) ](https://bintray.com/bincrafters/public-conan/ragel_installer%3Abincrafters/_latestVersion)
 [![Build status](https://ci.appveyor.com/api/projects/status/github/bincrafters/conan-ragel_installer?branch=stable%2F6.10&svg=true)](https://ci.appveyor.com/project/bincrafters/conan-ragel_installer)
 
 [Conan.io](https://conan.io) package recipe for [*ragel_installer*](http://www.colm.net/open-source/ragel).
@@ -37,6 +36,7 @@ The example below shows the commands used to publish to bincrafters conan reposi
 The following command both runs all the steps of the conan file, and publishes the package to the local system cache.  This includes downloading dependencies from "build_requires" and "requires" , and then running the build() method.
 
     $ conan create bincrafters/stable
+
 
 
 ## Add Remote
