@@ -11,7 +11,7 @@ class RagelConan(ConanFile):
                   "Ragel targets C, C++ and ASM. "
     homepage = "http://www.colm.net/open-source/ragel"
 
-    settings = {"os": ["Windows"], 
+    settings = {"os": ["Windows"],
                 "arch": ["x86", "x86_64"],
                 "compiler": [ "Visual Studio" ],
                 "build_type": ["Release"]}
@@ -19,33 +19,32 @@ class RagelConan(ConanFile):
     url = "https://github.com/bincrafters/conan-ragel_installer"
 
     license = "https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html"
-    recipe_license = "MIT"
     short_paths = True
     source_url = 'http://www.colm.net/files/ragel/ragel-{0}.tar.gz'.format(version)
-    
+
     def configure(self):
         if self.settings.os == "Windows":
             self.settings.compiler.runtime = "MT"
             self.settings.build_type = "Release"
-        
+
     def build_requirements(self):
         if self.settings.os == "Windows":
             self.build_requires("msys2_installer/latest@bincrafters/stable")
-                
+
     def source(self):
         filename = "ragel-%s.tar.gz" % self.version
-        tools.download(self.source_url, filename)   
+        tools.download(self.source_url, filename)
         tools.untargz(filename)
         os.unlink(filename)
-                                      
+
     def build(self):
         if self.settings.compiler == 'Visual Studio':
             # this overrides pre-configured environments (such as Appveyor's)
             if "VisualStudioVersion" in os.environ:
                 del os.environ["VisualStudioVersion"]
-                
+
             vccmd = tools.vcvars_command(self.settings)
-                
+
             if 'MSYS_ROOT' not in os.environ:
                 os.environ['MSYS_ROOT'] = self.deps_env_info["msys2_installer"].MSYS_ROOT
 
@@ -74,13 +73,12 @@ class RagelConan(ConanFile):
                     tools.replace_in_file(makefile_am, 
                                           'INCLUDES = -I$(top_srcdir)/aapl',
                                           'AM_CPPFLAGS = -I$(top_srcdir)/aapl')
-                                          
+
                     main_cpp = os.path.join('ragel', 'main.cpp').replace('\\','/')
-                    self.output.info("Patching: %s" % main_cpp)                
+                    self.output.info("Patching: %s" % main_cpp)
                     tools.replace_in_file(main_cpp, 
                                           '#include <unistd.h>',
                                           '')
-                                          
 
 
                     self.run("{vccmd} && bash -c 'aclocal'".format(vccmd=vccmd))
@@ -97,7 +95,7 @@ class RagelConan(ConanFile):
                                         '-wd4819 -wd4355 -wd4091 -wd4267 -wd4365 -wd4625 -wd4774 -wd4820'
 
                     linker_options = '/MACHINE:X{0}'.format('86' if self.settings.arch == 'x86' else 'x64')
-                    
+
                     self.prefix = tools.unix_path(os.path.abspath("../out"))
                     self.run('{vccmd} && bash -c \'./configure '
                              '--prefix={prefix} '
@@ -116,12 +114,12 @@ class RagelConan(ConanFile):
                                          compiler_options=compiler_options, 
                                          linker_options=linker_options,
                                          runtime=str(self.settings.compiler.runtime)))
-                    
+
                     self.run("{vccmd} && bash -c 'make -j {cpus} install".format(vccmd=vccmd, cpus=tools.cpu_count()))
         else:
             raise Exception("This recipe is only necessary for Visual Studio compilers. "
                             "Use a system package if you are on a different platform (or using a different compiler).")
-        
+
     def package(self):
         build_src_dir = "{0}-{1}".format('ragel', self.version)
         build_dir = os.path.join('out','bin')
@@ -133,4 +131,3 @@ class RagelConan(ConanFile):
         self.env_info.RAGEL_ROOT = self.package_folder
         self.env_info.path.append(os.path.join(self.package_folder, 'bin'))
 
-    
