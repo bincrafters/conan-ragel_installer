@@ -1,11 +1,11 @@
-[![Download](https://api.bintray.com/packages/bincrafters/public-conan/ragel_installer%3Abincrafters/images/download.svg) ](https://bintray.com/bincrafters/public-conan/ragel_installer%3Abincrafters/_latestVersion)
-[![Build status](https://ci.appveyor.com/api/projects/status/github/bincrafters/conan-ragel_installer?branch=stable%2F6.10&svg=true)](https://ci.appveyor.com/project/bincrafters/conan-ragel_installer)
+[ ![Download](https://api.bintray.com/packages/bincrafters/public-conan/ragel_install%3Abincrafters/images/download.svg?version=6.10%3Astable) ](https://bintray.com/bincrafters/public-conan/ragel_install%3Abincrafters/6.10%3Astable/link)
+[![Build status](https://ci.appveyor.com/api/projects/status/se14gom9yvuq9ps4?svg=true)](https://ci.appveyor.com/project/bincrafters/conan-ragel_installer)
 
-[Conan.io](https://conan.io) package recipe for [*ragel_installer*](http://www.colm.net/open-source/ragel).
+Ragel compiles executable finite state machines from regular languages. Ragel targets C, C++ and ASM.
 
-Ragel compiles executable finite state machines from regular languages. Ragel targets C, C++ and ASM. 
+[Conan.io](https://conan.io) package for the [ragel](http://www.colm.net/open-source/ragel/) project.
 
-The packages generated with this **conanfile** can be found on [Bintray](https://bintray.com/bincrafters/public-conan/ragel_installer%3Abincrafters).
+The packages generated with this **conanfile** can be found in [Bintray](https://bintray.com/bincrafters/public-conan/conan-ragel_installer%3Abincrafters).
 
 ## For Users: Use this package
 
@@ -20,6 +20,8 @@ If you handle multiple dependencies in your project is better to add a *conanfil
     [requires]
     ragel_installer/6.10@bincrafters/stable
 
+    [generators]
+    txt
 
 Complete the installation of requirements for your project running:
 
@@ -37,20 +39,13 @@ The following command both runs all the steps of the conan file, and publishes t
 
     $ conan create bincrafters/stable
 
-
-
 ## Add Remote
 
-    $ conan remote add bincrafters "https://api.bintray.com/conan/bincrafters/public-conan"
+	$ conan remote add bincrafters "https://api.bintray.com/conan/bincrafters/public-conan"
 
 ## Upload
 
-    $ conan upload ragel_installer/6.10@bincrafters/stable --all -r bincrafters
+    $ conan upload ragel_install/6.10@bincrafters/stable --all -r bincrafters
 
-
-## Conan Recipe License
-
-NOTE: The conan recipe license applies only to the files of this recipe, which can be used to build and package ragel_installer.
-It does *not* in any way apply or is related to the actual software being packaged.
-
-[MIT](https://github.com/bincrafters/conan-ragel_installer/blob/stable/6.10/LICENSE.md)
+### License
+[GNU GPL v2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
