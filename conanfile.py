@@ -11,10 +11,14 @@ class RagelConan(ConanFile):
                   "Ragel targets C, C++ and ASM. "
     homepage = "http://www.colm.net/open-source/ragel"
 
-    settings = {"os": ["Windows", "Linux"],
+    settings = {"os": ["Windows", "Linux", "Macos"],
                 "arch": ["x86", "x86_64"],
-                "compiler": [ 'Visual Studio', 'gcc', 'clang' ],
-                "build_type": ["Release"]}
+                "compiler": {'Visual Studio': None,
+                             'gcc': {'version': None,
+                                     'libcxx': ["libstdc++", "libstdc++11"]},
+                             'clang': {'version': None, "libcxx": ["libstdc++", "libstdc++11", "libc++"]}
+                             }
+                }
 
     url = "https://github.com/bincrafters/conan-ragel_installer"
     license = "https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html"
@@ -22,12 +26,6 @@ class RagelConan(ConanFile):
     source_url = 'http://www.colm.net/files/ragel/ragel-{0}.tar.gz'.format(version)
     build_policy = "missing"
     autotools = None
-
-    def configure(self):
-        if self.settings.compiler == 'Visual Studio':
-            self.settings.compiler.runtime = "MT"
-
-        self.settings.build_type = "Release"
 
     def build_requirements(self):
         if self.settings.os == "Windows":
@@ -126,7 +124,7 @@ class RagelConan(ConanFile):
                                         '-wd4819 -wd4355 -wd4091 -wd4267 -wd4365 -wd4625 -wd4774 -wd4820'
 
                     linker_options = '/MACHINE:X{0}'.format('86' if self.settings.arch == 'x86' else '64')
-                    runtime_options = '-' + str(self.settings.compiler.runtime)
+                    runtime_options = '-MT'
                     ld_options = 'LD="link" '
                     nm_options = 'NM="dumpbin -symbols" '
                     strip_options = 'STRIP=":" '
