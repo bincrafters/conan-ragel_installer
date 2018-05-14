@@ -171,7 +171,7 @@ class RagelConan(ConanFile):
         if self.settings.os != "Windows":
             self.unix_build()
         else:
-            self.linux_build()
+            self.windows_build()
 
     def package(self):
         build_src_dir = "{0}-{1}".format('ragel', self.version)
