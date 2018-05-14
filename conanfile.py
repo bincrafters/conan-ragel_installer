@@ -15,8 +15,11 @@ class RagelConan(ConanFile):
                 "arch": ["x86", "x86_64"],
                 "compiler": {'Visual Studio': None,
                              'gcc': {'version': None,
-                                     'libcxx': ["libstdc++", "libstdc++11"]},
-                             'clang': {'version': None, "libcxx": ["libstdc++", "libstdc++11", "libc++"]}
+                                     'libcxx': ["libstdc++", "libstdc++11"],
+                                     "threads": ["posix", "win32"],
+                                     "exception": ["dwarf2", "sjlj", "seh"]},
+                             'clang': {'version': None, "libcxx": ["libstdc++", "libstdc++11", "libc++"]},
+                             'apple-clang': {'version': None, "libcxx": ["libstdc++", "libc++"]}
                              }
                 }
 
@@ -26,6 +29,11 @@ class RagelConan(ConanFile):
     source_url = 'http://www.colm.net/files/ragel/ragel-{0}.tar.gz'.format(version)
     build_policy = "missing"
     autotools = None
+
+    def configure(self):
+        if self.settings.os != "Windows" and self.settings.compiler == "gcc":
+            del self.settings.compiler.threads
+            del self.settings.compiler.exception
 
     def build_requirements(self):
         if self.settings.os == "Windows":
