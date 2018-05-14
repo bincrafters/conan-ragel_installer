@@ -54,7 +54,7 @@ class RagelConan(ConanFile):
             self.autotools.configure(configure_dir="ragel-%s" % self.version)
         return self.autotools
 
-    def linux_build(self):
+    def unix_build(self):
         autotools = self.configure_autotools()
         autotools.make()
 
@@ -168,10 +168,10 @@ class RagelConan(ConanFile):
 
 
     def build(self):
-        if self.settings.os == "Linux":
-            self.linux_build()
+        if self.settings.os != "Windows":
+            self.unix_build()
         else:
-            self.windows_build()
+            self.linux_build()
 
     def package(self):
         build_src_dir = "{0}-{1}".format('ragel', self.version)
@@ -179,7 +179,7 @@ class RagelConan(ConanFile):
 
         self.copy(pattern="COPYING", dst="licenses", src=build_src_dir)
         self.copy(pattern="CREDITS", dst="licenses", src=build_src_dir)
-        if self.settings.os == "Linux":
+        if self.settings.os != "Windows":
             autotools = self.configure_autotools()
             autotools.make(args=["install"])
         else:
