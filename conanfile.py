@@ -20,6 +20,7 @@ class RagelConan(ConanFile):
     license = "https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html"
     author = "Bincrafters <bincrafters@gmail.com>"
     source_url = 'http://www.colm.net/files/ragel/ragel-{0}.tar.gz'.format(version)
+    build_policy = "missing"
     autotools = None
 
     def configure(self):
