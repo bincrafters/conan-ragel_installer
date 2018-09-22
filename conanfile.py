@@ -122,4 +122,4 @@ class RagelConan(ConanFile):
         self.env_info.path.append(os.path.join(self.package_folder, 'bin'))
 
     def package_id(self):
-        del self.info.settings.compiler
+        self.info.settings.compiler = 'Any'
