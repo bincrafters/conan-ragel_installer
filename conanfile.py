@@ -33,7 +33,7 @@ class RagelConan(ConanFile):
     def _configure_autotools(self):
         if not self._autotools:
             self._autotools = AutoToolsBuildEnvironment(self)
-            self._autotools.configure()
+            self._autotools.configure(configure_dir=self._source_subfolder)
         return self._autotools
 
     def _configure_cmake(self):
