@@ -1,7 +1,6 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from conans import ConanFile, RunEnvironment, tools
+from conans import ConanFile, tools
 
 class TestPackage(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
@@ -10,5 +9,4 @@ class TestPackage(ConanFile):
         pass
 
     def test(self):
-        with tools.environment_append(RunEnvironment(self).vars):
-            self.run('ragel --version')
+        self.run('ragel --version', run_environment=True)
