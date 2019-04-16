@@ -46,7 +46,7 @@ The following command both runs all the steps of the conan file, and publishes t
 
 ## Upload
 
-    $ conan upload ragel_install/6.10@bincrafters/stable --all -r bincrafters
+    $ conan upload ragel_installer/6.10@bincrafters/stable --all -r bincrafters
 
 ### License
-[GNU GPL v2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
+[MIT](LICENSE.md)
