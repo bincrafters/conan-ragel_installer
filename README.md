@@ -1,5 +1,6 @@
-[ ![Download](https://api.bintray.com/packages/bincrafters/public-conan/ragel_install%3Abincrafters/images/download.svg?version=6.10%3Astable) ](https://bintray.com/bincrafters/public-conan/ragel_install%3Abincrafters/6.10%3Astable/link)
-[![Build status](https://ci.appveyor.com/api/projects/status/se14gom9yvuq9ps4?svg=true)](https://ci.appveyor.com/project/bincrafters/conan-ragel_installer)
+| Bintray | Windows | Linux & macOS |
+|:--------:|:---------:|:-----------------:|
+|[![Download](https://api.bintray.com/packages/bincrafters/public-conan/ragel_installer%3Abincrafters/images/download.svg) ](https://bintray.com/bincrafters/public-conan/ragel_installer%3Abincrafters/_latestVersion)|[![Build status](https://ci.appveyor.com/api/projects/status/github/bincrafters/conan-ragel_installer?svg=true)](https://ci.appveyor.com/project/bincrafters/conan-ragel_installer)|[![Build Status](https://travis-ci.com/bincrafters/conan-ragel_installer.svg)](https://travis-ci.com/bincrafters/conan-ragel_installer)|
 
 Ragel compiles executable finite state machines from regular languages. Ragel targets C, C++ and ASM.
 
