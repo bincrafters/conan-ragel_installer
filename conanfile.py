@@ -11,7 +11,6 @@ class RagelConan(ConanFile):
     url = "https://github.com/bincrafters/conan-ragel_installer"
     license = "GPL-2.0"
     topics = ("conan", "ragel", "installer", "FSM", "regex", "fsm-compiler")
-    author = "Bincrafters <bincrafters@gmail.com>"
     exports = "LICENSE.md"
     exports_sources = ["CMakeLists.txt", "config.h", "0001-unistd.patch"]
     generators = "cmake"
