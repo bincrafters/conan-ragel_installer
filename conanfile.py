@@ -59,7 +59,7 @@ class RagelConan(ConanFile):
 
     def package_info(self):
         self.env_info.RAGEL_ROOT = self.package_folder
-        self.env_info.path.append(os.path.join(self.package_folder, 'bin'))
+        self.env_info.PATH.append(os.path.join(self.package_folder, 'bin'))
 
     def package_id(self):
         del self.info.settings.compiler
